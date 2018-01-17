@@ -310,7 +310,7 @@ document.addEventListener('mauticPageEventDelivered', function(e) {
     
     if (!MauticJS.firstDeliveryMade) {
         MauticJS.firstDeliveryMade = true;
-        for (var i in MauticJS.postEventDeliveryQueue) {
+        for(var i=0,len=MauticJS.postEventDeliveryQueue.length;i<len;i++) {
             if (typeof MauticJS.postEventDeliveryQueue[i] == 'function') {
                 MauticJS.postEventDeliveryQueue[i](detail);
             }
